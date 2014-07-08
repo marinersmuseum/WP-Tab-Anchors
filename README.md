@@ -1,7 +1,7 @@
 WP-Tab-Anchors
 ==============
 
-By: Adam Carrier acarrier [at] marinersmuseum [dot] ord
+By: Adam Carrier acarrier [at] marinersmuseum [dot] org
 
 This WordPress plugin allows you to permalink (i.e., bookmark) to content on Twitter Bootstrap tabs via hash tag links.
 
