@@ -102,7 +102,6 @@ jQuery(document).ready(function () {
     read more:  https://developer.mozilla.org/en-US/docs/Web/API/Window.onhashchange
     */
     function getHashValue() {
-        console.log("HERE!");
         return gotoHashTab(location.hash);
     }
 
