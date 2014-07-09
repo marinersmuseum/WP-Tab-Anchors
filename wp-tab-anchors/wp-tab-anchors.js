@@ -76,12 +76,11 @@ jQuery(document).ready(function () {
             // use Global hash
             hash = customHash || location.hash;
             // activate tab...
-            //console.log("Trying to open tab " + getTabName(hash) );
 
-            /*
-            Bootstrap Tabs code
-            */
-            jQuery('a[href="' + getTabName(hash) + '"]').tab('show');
+            if (hash !== "") { // only run it if there's a hash
+                //console.log("Trying to open tab " + getTabName(hash) );
+                jQuery('a[href="' + getTabName(hash) + '"]').tab('show');
+            }
             // then, scroll to anchor using the 'shown.bs.tab' event's callback function
             return false;
         };
@@ -94,4 +93,22 @@ jQuery(document).ready(function () {
     });
 
     gotoHashTab(); // call this on ready, to pick up inbound links to anchors on tabs
+
+    /*
+    The following is necessary to check for a hash change on the current page,
+    in case you have links on the current page (e.g., menus, inline) for tab content on the current page
+    
+    credit:  http://www.codechewing.com/library/detect-url-hash-change-javascript/
+    read more:  https://developer.mozilla.org/en-US/docs/Web/API/Window.onhashchange
+    */
+    function getHashValue() {
+        console.log("HERE!");
+        return gotoHashTab(location.hash);
+    }
+
+    if ( "onhashchange" in window ) { // feature detection
+        window.addEventListener('hashchange', getHashValue, false);
+    }
+
+    window.onhashchange = getHashValue;
 });
