@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: WP Tab Anchors
- * Description: This plugin allows you to permalink (i.e., bookmark) to content on a Bootstrap or jQuery UI tab via hash tag links.
- * Version: 1.0.0
+ * Description: This plugin allows you to permalink (i.e., bookmark) to content on Twitter Bootstrap tabs via hash tag links.
+ * Version: 1.1.0
  * Author: Adam Carrier
  * Author URI: http://about.me/adamcarrier
  * License: GPLv2
