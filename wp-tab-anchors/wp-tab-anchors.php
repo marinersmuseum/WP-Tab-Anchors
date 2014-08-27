@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) die;
 
 function scripts() {
 	wp_enqueue_script( 'wp-tab-anchors', plugin_dir_url( __FILE__ ) . 'wp-tab-anchors.js', false, '1.0.0' );
-	wp_enqueue_script( 'jquery-scrollTo', plugin_dir_url( __FILE__ ) . 'jquery.scrollTo.min.js', array( 'jquery' ), '1.4.11' );
+	wp_enqueue_script( 'jquery-scrollTo', plugin_dir_url( __FILE__ ) . 'jquery.scrollTo.min.js', array( 'jquery' ), '1.4.13' );
 }
 
 add_action( 'wp_enqueue_scripts', 'scripts' );
