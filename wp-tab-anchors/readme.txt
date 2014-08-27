@@ -4,7 +4,7 @@ Tags: tabs, anchors, Bootstrap tabs
 Donate link: http://www.marinersmuseum.org/donate
 Requires at least: 3.8
 Tested up to: 3.9.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
