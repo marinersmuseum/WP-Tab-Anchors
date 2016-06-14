@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) die;
 function scripts() {
 	wp_enqueue_script( 'wp-tab-anchors', plugin_dir_url( __FILE__ ) . 'wp-tab-anchors.js', false, '1.3.0' );
 	// only load jQuery.scrollTo if scrolling is enabled
-	if ( get_option('wp_tab_anchors_auto_scrolling') == '1') {
+	if ( get_option('wp_tab_anchors_auto_scrolling') == 'true') {
 		wp_enqueue_script( 'jquery-scrollTo', plugin_dir_url( __FILE__ ) . 'jquery.scrollTo.min.js', array( 'jquery' ), '2.1.2' );
 	}
 }
@@ -41,7 +41,7 @@ function wp_tab_anchors_init(){
 				<tr valign="top">
 				<th scope="row">Scrolling Settings</th>
 					<td>
-						<input type="checkbox" id="wp_tab_anchors_auto_scrolling" name="wp_tab_anchors_auto_scrolling" value="1"<?php echo checked( 1, $options['checkbox_example'], false ); ?>/>
+						<input type="checkbox" id="wp_tab_anchors_auto_scrolling" name="wp_tab_anchors_auto_scrolling" value="true"<?php checked('true', get_option('wp_tab_anchors_auto_scrolling', 'true')); ?>/>
 						<label for="wp_tab_anchors_auto_scrolling">Enable Automatic Scrolling</label>
 					</td>
 				</tr>
