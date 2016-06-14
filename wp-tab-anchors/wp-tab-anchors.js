@@ -70,7 +70,6 @@ jQuery(document).ready(function () {
                 return "#" + anchors[l][0]; // myHash is the name of an anchor; returns the name of the tab containing the anchor
             }
         }
-        //console.log(myHash);
         return myHash; // if myHash isn't an anchor (i.e., it wasn't found in the for loop), it's the name of a tab, so just return it
     },
         gotoHashTab = function (customHash) {
@@ -81,24 +80,24 @@ jQuery(document).ready(function () {
             if (hash !== "") { // only run it if there's a hash
                 //console.log("Trying to open tab " + getTabName(hash) );
                 jQuery('a[href="' + getTabName(hash) + '"]').tab('show');
-                // if hash is actually a collapsible component (e.g., accordion) nested inside a tab 
-                jQuery('a[href="' + hash + '"]').click();
             }
             // then, scroll to anchor using the 'shown.bs.tab' event's callback function
-            return hash;
+            return false;
         };
 
-    function scrollToHash () {
-        return (function () {
-            jQuery.scrollTo(hash,800);
-        }());
-    }
-
-    hash = gotoHashTab(); // call this on ready, to pick up inbound links to anchors on tabs; 'hash' will hold the proper anchor to scroll to
-
     // the following gets called after every tab change
-    jQuery('a[data-toggle="tab"]').on('shown.bs.tab', scrollToHash());
-    jQuery('a[data-toggle="collapse"]').on('shown.bs.collapse', scrollToHash());
+    jQuery('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+        return (function () {
+            // check if the jQuery.scrollTo plugin is registered with WP (i.e., whether auto scrolling is enabled)
+            if(window.jQuery().scrollTo) {
+                jQuery.scrollTo(hash,800);
+                return true;
+            }
+            return false;
+        }());
+    });
+
+    gotoHashTab(); // call this on ready, to pick up inbound links to anchors on tabs
 
     /*
     The following is necessary to check for a hash change on the current page,
