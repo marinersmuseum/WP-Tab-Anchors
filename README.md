@@ -1,7 +1,8 @@
-WP-Tab-Anchors
-==============
+# WP-Tab-Anchors
 
 By: Adam Carrier acarrier [at] marinersmuseum [dot] org
+
+## Description
 
 This plugin allows you to permalink (i.e., bookmark) to content on Twitter Bootstrap tabs (and now content inside collapsible components) via hash tag links.
 
@@ -11,14 +12,17 @@ Here's an example: You have an element inside a collapsed tab you want to link t
 
 If you don't want the page to scroll automatically, there's an option in the WordPress admin dashboard (`Settings` > `WP Tab Anchors`) to disable the auto scrolling --enabled by default. This option will enable/disable the jQuery scrolling plugin from loading on your site. That means, if you change this setting and use a site caching plugin, you might need to clear your site cache to ensure the scrolling is truly enabled or disabled.
 
-== Installation ==
+## Installation
 
 1. Upload the plugin files to the `/wp-content/plugins/wp-tab-anchors` directory, or install the plugin through the WordPress `Plugins` screen directly.
-1. Activate the plugin through the `Plugins` screen in WordPress.
-1. Use the `Settings` > `WP Tab Anchors` screen to configure the plugin.
-1. That's it! Enjoy! It works automatically.
+2. Activate the plugin through the `Plugins` screen in WordPress.
+3. Use the `Settings` > `WP Tab Anchors` screen to configure the plugin.
+4. That's it! Enjoy! It works automatically.
 
-== Changelog ==
+## Changelog
+
+= 1.4 =
+* Added a fix to accommodate nested tabs (which aren't officially supported)
 
 = 1.3 =
 * Updated jquery.scrollTo to 2.1.2
@@ -27,7 +31,7 @@ If you don't want the page to scroll automatically, there's an option in the Wor
 = 1.2 =
 * Updated jquery.scrollTo to 1.4.13
 
-== Upgrade Notice ==
+## Upgrade Notice
 
-= 1.3 =
-Adds option to disable auto scrolling
+= 1.4 =
+Added a fix to accommodate nested tabs (which aren't officially supported)

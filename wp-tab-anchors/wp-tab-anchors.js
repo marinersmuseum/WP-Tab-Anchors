@@ -17,6 +17,8 @@ jQuery(document).ready(function () {
     // iterate through each group of tabs
     for (var i = 0; i < tabGroups.length; i++) {
 
+        addr = 0; // reset tab index for current tab group
+
         var aElements = tabGroups.item(i).getElementsByTagName('a');
         if (startingRow === 0 && numRows === 0) {
             // do nothing; first run
